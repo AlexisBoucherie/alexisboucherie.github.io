@@ -22,22 +22,33 @@
 
     <!-- Main -->
     <main class="main">
+		<div class="content">
 
-        <h1>Générateur rapide de PNJ</h1>
+			<h1>Générateur rapide de PNJ</h1>
+			
+			<!-- En-tête lignes -->
+			<div class="npc-header">
+				<span>Type de PNJ</span>
+				<span>Supérieur</span>
+				<span>Archétype</span>
+				<span>Nombre</span>
+				<span></span>
+			</div>
+			
+			<!-- Container lignes -->
+			<div id="npc-container"></div>
 
-        <!-- Container lignes -->
-        <div id="npc-container"></div>
+			<!-- Actions -->
+			<div class="actions">
+				<button id="add-line">(+) Ajouter un PNJ</button>
+			</div>
 
-        <!-- Actions -->
-        <div class="actions">
-            <button id="add-line">(+) Ajouter un PNJ</button>
-        </div>
-
-        <div class="actions">
-            <button id="generate">Générer les PNJ !</button>
-            <p id="error" class="error"></p>
-        </div>
-
+			<div class="actions">
+				<button id="generate">Générer les PNJ !</button>
+				<p id="error" class="error"></p>
+			</div>
+			
+		</div>
     </main>
 </div>
 
@@ -63,7 +74,7 @@
 
         <input type="number" class="nombre" min="1" value="1">
 
-        <button class="delete">🗑</button>
+        <button class="delete">✖</button>
     </div>
 </template>
 
