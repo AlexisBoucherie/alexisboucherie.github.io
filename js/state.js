@@ -2,11 +2,11 @@ export const state = {
     npcList: []
 };
 
-export function addNPC(npc) {
+export function addNpc(npc) {
     state.npcList.push(npc);
 }
 
-export function removeNPC(id) {
+export function removeNpc(id) {
     state.npcList = state.npcList.filter(p => p.id !== id);
 }
 

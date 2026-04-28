@@ -1,17 +1,17 @@
 import { generateUUID } from "../utils.js";
-import { state, addNPC, removeNPC, getTotalCount } from "../state.js";
+import { state, addNpc, removeNpc, getTotalCount } from "../state.js";
 
-const container = document.getElementById("NPC-container");
-const template = document.getElementById("NPC-row-template");
+const container = document.getElementById("npc-container");
+const template = document.getElementById("npc-row-template");
 const errorEl = document.getElementById("error");
 
-export function initNPCForm() {
+export function initNpcForm() {
     addLine(); // première ligne
 }
 
 export function addLine() {
     const clone = template.content.cloneNode(true);
-    const row = clone.querySelector(".NPC-row");
+    const row = clone.querySelector(".npc-row");
 
     const id = generateUUID();
     row.dataset.id = id;
@@ -19,12 +19,12 @@ export function addLine() {
     const deleteBtn = row.querySelector(".delete");
 
     deleteBtn.addEventListener("click", () => {
-        removeNPC(id);
+        removeNpc(id);
         row.remove();
     });
 
     // Ajout au state
-    addNPC({
+    addNpc({
         id,
         type: "ange",
         superieur: "random",
@@ -34,13 +34,13 @@ export function addLine() {
 
     // Sync inputs -> state
     row.addEventListener("change", (e) => {
-        const NPC = state.NPCList.find(p => p.id === id);
-        if (!NPC) return;
+        const npc = state.npcList.find(p => p.id === id);
+        if (!npc) return;
 
-        if (e.target.classList.contains("type")) NPC.type = e.target.value;
-        if (e.target.classList.contains("superieur")) NPC.superieur = e.target.value;
-        if (e.target.classList.contains("archetype")) NPC.archetype = e.target.value;
-        if (e.target.classList.contains("nombre")) NPC.nombre = Number(e.target.value);
+        if (e.target.classList.contains("type")) npc.type = e.target.value;
+        if (e.target.classList.contains("superieur")) npc.superieur = e.target.value;
+        if (e.target.classList.contains("archetype")) npc.archetype = e.target.value;
+        if (e.target.classList.contains("nombre")) npc.nombre = Number(e.target.value);
     });
 
     container.appendChild(clone);

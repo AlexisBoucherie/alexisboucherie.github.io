@@ -1,13 +1,15 @@
-import { initNPCForm, addLine, validateTotal } from "./ui/npcForm.js";
+import { initNpcForm, addLine, validateTotal } from "./ui/npcForm.js";
 
-document.getElementById("add-line").addEventListener("click", () => {
-    addLine();
+document.addEventListener("DOMContentLoaded", () => {
+    initNpcForm();
+
+    document.getElementById("add-line").addEventListener("click", () => {
+        addLine();
+    });
+
+    document.getElementById("generate").addEventListener("click", () => {
+        if (!validateTotal()) return;
+
+        console.log("Future generation...");
+    });
 });
-
-document.getElementById("generate").addEventListener("click", () => {
-    if (!validateTotal()) return;
-
-    console.log("Génération future...");
-});
-
-initNPCForm();
