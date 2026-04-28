@@ -1,4 +1,4 @@
-# 👼 INS-MV 3 Character Generator 😈
+# 👼 INS-MV 3 - Character Generator 😈
 
 Frontend tool for the magnificent and delightfully infamous French tabletop RPG
 **In Nomine Satanis / Magna Veritas (INS-MV), 3rd edition**
