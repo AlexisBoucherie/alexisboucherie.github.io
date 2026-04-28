@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>INS/MV - Character Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>INS/MV</h2>
+        <nav>
+            <ul>
+                <li class="active">Générateur</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <h1>Générateur rapide de PNJ</h1>
+
+        <!-- Container lignes -->
+        <div id="pnj-container"></div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button id="add-line">+ Ajouter un PNJ</button>
+        </div>
+
+        <div class="actions">
+            <button id="generate">Générer les PNJ</button>
+            <p id="error" class="error"></p>
+        </div>
+
+    </main>
+</div>
+
+<!-- Template -->
+<template id="pnj-row-template">
+    <div class="pnj-row">
+
+        <select class="type">
+            <option value="ange">Ange</option>
+            <option value="demon">Démon</option>
+        </select>
+
+        <select class="superieur">
+            <option value="random">Aléatoire</option>
+            <option value="baal">Baal</option>
+            <option value="belial">Bélial</option>
+        </select>
+
+        <select class="archetype">
+            <option value="random">Aléatoire</option>
+            <option value="optimise">Optimisé</option>
+        </select>
+
+        <input type="number" class="nombre" min="1" value="1">
+
+        <button class="delete">🗑</button>
+    </div>
+</template>
+
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>
