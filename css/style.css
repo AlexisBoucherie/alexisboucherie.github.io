@@ -51,15 +51,15 @@ h1 {
 }
 
 /* PNJ Row */
-.pnj-row {
+.npc-row {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.pnj-row select,
-.pnj-row input {
+.npc-row select,
+.npc-row input {
     padding: 8px;
     background: #333;
     border: none;
@@ -101,7 +101,7 @@ button {
         width: 100%;
     }
 
-    .pnj-row {
+    .npc-row {
         grid-template-columns: 1fr;
     }
 }
