@@ -1,8 +1,8 @@
 import { generateUUID } from "../utils.js";
 import { state, addNpc, removeNpc, getTotalCount } from "../state.js";
 
-const container = document.getElementById("Npc-container");
-const template = document.getElementById("Npc-row-template");
+const container = document.getElementById("npc-container");
+const template = document.getElementById("npc-row-template");
 const errorEl = document.getElementById("error");
 
 export function initNpcForm() {
@@ -34,7 +34,7 @@ export function addLine() {
 
     // Sync inputs -> state
     row.addEventListener("change", (e) => {
-        const npc = state.NpcList.find(p => p.id === id);
+        const npc = state.npcList.find(p => p.id === id);
         if (!npc) return;
 
         if (e.target.classList.contains("type")) npc.type = e.target.value;
