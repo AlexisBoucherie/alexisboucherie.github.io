@@ -84,6 +84,16 @@ button {
     background: #444;
     color: white;
     border: none;
+	border-radius: 5px;
+}
+
+#add-line {
+	background: #7FFFD4;
+	color: black;
+}
+
+#generate {
+	background: #DC143C;
 }
 
 .error {
