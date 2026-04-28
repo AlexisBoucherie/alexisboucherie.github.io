@@ -1,3 +1,6 @@
+/* ========================
+   RESET & BASE
+======================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,21 +13,27 @@ body {
     color: #eee;
 }
 
-/* Layout */
+/* ========================
+   LAYOUT GLOBAL
+======================== */
 .app {
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar */
+/* ========================
+   SIDEBAR
+======================== */
 .sidebar {
     width: 220px;
     background: #2a2a2a;
     padding: 20px;
+    border-right: 1px solid #333;
 }
 
 .sidebar h2 {
     margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 
 .sidebar ul {
@@ -34,84 +43,223 @@ body {
 .sidebar li {
     padding: 10px;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.sidebar li:hover {
+    background: #3a3a3a;
 }
 
 .sidebar li.active {
     background: #444;
 }
 
-/* Main */
+/* ========================
+   MAIN CONTENT
+======================== */
 .main {
     flex: 1;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
 }
 
+.content {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* ========================
+   TITRES
+======================== */
 h1 {
     margin-bottom: 20px;
+    font-size: 1.6rem;
 }
 
-/* PNJ Row */
+/* ========================
+   TABLE HEADER
+======================== */
+.npc-header {
+    display: grid;
+    grid-template-columns: 
+        140px   /* Type */
+        180px   /* Supérieur */
+        180px   /* Archétype */
+        80px    /* Nombre */
+        40px;   /* Delete */
+
+    gap: 10px;
+    margin-bottom: 8px;
+
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* ========================
+   NPC ROW
+======================== */
 .npc-row {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 
+        140px
+        180px
+        180px
+        80px
+        40px;
+
     gap: 10px;
+    align-items: center;
     margin-bottom: 10px;
 }
 
+/* ========================
+   INPUTS & SELECTS
+======================== */
 .npc-row select,
 .npc-row input {
-    padding: 8px;
+    width: 100%;
+    padding: 6px 8px;
     background: #333;
-    border: none;
+    border: 1px solid #444;
+    border-radius: 4px;
     color: #fff;
+    font-size: 0.9rem;
+    transition: border 0.2s;
 }
 
+.npc-row select:focus,
+.npc-row input:focus {
+    outline: none;
+    border-color: #7FFFD4;
+}
+
+/* ========================
+   DELETE BUTTON
+======================== */
 .delete {
-    background: #a33;
+    background: transparent;
     border: none;
+    color: #ff6b6b;
+    font-size: 16px;
     cursor: pointer;
-    color: white;
+    padding: 4px;
+    text-align: center;
 }
 
-/* Actions */
+.delete:hover {
+    color: #ff3b3b;
+}
+
+/* ========================
+   ACTIONS
+======================== */
 .actions {
-    margin-top: 15px;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
 }
 
+/* ========================
+   BUTTONS
+======================== */
 button {
     padding: 10px 15px;
     cursor: pointer;
     background: #444;
     color: white;
     border: none;
-	border-radius: 5px;
+    border-radius: 5px;
+    transition: background 0.2s, transform 0.1s;
 }
 
+button:hover {
+    background: #555;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* CTA spécifiques */
 #add-line {
-	background: #7FFFD4;
-	color: black;
+    background: #7FFFD4;
+    color: black;
+}
+
+#add-line:hover {
+    background: #66e0c2;
 }
 
 #generate {
-	background: #DC143C;
+    background: #DC143C;
 }
 
+#generate:hover {
+    background: #b01030;
+}
+
+/* ========================
+   ERROR
+======================== */
 .error {
     color: #ff6b6b;
     margin-top: 10px;
+    font-size: 0.9rem;
 }
 
-/* Responsive */
+/* ========================
+   RESPONSIVE
+======================== */
 @media (max-width: 768px) {
+
     .app {
         flex-direction: column;
     }
 
     .sidebar {
         width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #333;
     }
 
+    .main {
+        padding: 20px 10px;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    /* On masque le header */
+    .npc-header {
+        display: none;
+    }
+
+    /* Chaque ligne devient une carte */
     .npc-row {
         grid-template-columns: 1fr;
+        background: #2a2a2a;
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    .npc-row select,
+    .npc-row input {
+        width: 100%;
+    }
+
+    .delete {
+        align-self: flex-end;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
     }
 }
