@@ -78,24 +78,31 @@ h1 {
     font-size: 1.6rem;
 }
 
+.release {
+	font-size: 0.8em;
+}
+
 /* ========================
-   FORM HEADER (RENOMMÉ)
+   FORM HEADER
 ======================== */
+
+:root {
+    --npc-grid-columns: 140px 180px 180px 80px 40px;
+}
+
 .npc-form-header {
     display: grid;
-    grid-template-columns: 
-        140px
-        180px
-        180px
-        80px
-        40px;
-
+    grid-template-columns: var(--npc-grid-columns);
     gap: 10px;
     margin-bottom: 8px;
-
     font-size: 0.75rem;
     color: #888;
     text-transform: uppercase;
+}
+
+.npc-row > *,
+.npc-form-header > * {
+    min-width: 0;
 }
 
 /* ========================
@@ -103,13 +110,7 @@ h1 {
 ======================== */
 .npc-row {
     display: grid;
-    grid-template-columns: 
-        140px
-        180px
-        180px
-        80px
-        40px;
-
+    grid-template-columns: var(--npc-grid-columns);
     gap: 10px;
     align-items: center;
     margin-bottom: 10px;
@@ -176,7 +177,7 @@ button {
 }
 
 /* ========================
-   NPC OUTPUT (ISOLATION)
+   NPC OUTPUT
 ======================== */
 .npc-output {
     margin-top: 20px;
@@ -208,7 +209,7 @@ button {
 }
 
 /* ========================
-   CARD HEADER (DIFFÉRENT)
+   CARD HEADER
 ======================== */
 .npc-card-header {
     display: grid;
