@@ -1,4 +1,5 @@
 import { initNpcForm, addLine, validateTotal } from "./ui/npcForm.js";
+import { generateNPCCards } from "./npcGenerator.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     initNpcForm();
@@ -8,8 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("generate").addEventListener("click", () => {
-        if (!validateTotal()) return;
+		const total = validateTotal();
+		if (total === null) return;
 
-        console.log("Future generation...");
-    });
+		generateNPCCards(total);
+	});
 });
