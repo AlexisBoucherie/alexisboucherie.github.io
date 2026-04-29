@@ -222,6 +222,8 @@ button:active {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* ========================
@@ -230,6 +232,11 @@ button:active {
 .npc-header {
     border-bottom: 1px solid #555;
     padding-bottom: 8px;
+    min-width: 0; /* CRITIQUE */
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
 }
 
 .npc-type {
@@ -242,11 +249,19 @@ button:active {
 .npc-main {
     font-size: 1.1rem;
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .npc-sub {
     font-size: 0.9rem;
     opacity: 0.7;
+}
+
+.npc-type,
+.npc-main,
+.npc-sub {
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 /* ========================
@@ -305,7 +320,7 @@ button:active {
 }
 
 /* ========================
-   RESPONSIVE
+   RESPONSIVE TABLETTE
 ======================== */
 @media (max-width: 768px) {
 
@@ -345,6 +360,18 @@ button:active {
         width: 100%;
     }
 
+    .npc-card {
+        padding: 12px;
+    }
+
+    .npc-main {
+        font-size: 1rem;
+    }
+
+    .npc-sub {
+        font-size: 0.8rem;
+    }
+
     .delete {
         align-self: flex-end;
     }
@@ -355,5 +382,27 @@ button:active {
 
     button {
         width: 100%;
+    }
+}
+
+/* ========================
+   RESPONSIVE MOBILE
+======================== */
+
+@media (max-width: 480px) {
+    .npc-results {
+        grid-template-columns: 1fr;
+    }
+
+    .npc-card {
+        padding: 10px;
+    }
+
+    .npc-main {
+        font-size: 0.95rem;
+    }
+
+    .npc-type {
+        font-size: 0.7rem;
     }
 }
