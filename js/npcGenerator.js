@@ -10,7 +10,7 @@ export function generateNPCCards(total) {
 		
         card.innerHTML = `
             <!-- LEVEL 1 -->
-            <div class="npc-header">
+            <div class="npc-card-header">
                 <div class="npc-type">Type</div>
                 <div class="npc-main">Archétype</div>
                 <div class="npc-sub">Supérieur</div>

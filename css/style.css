@@ -79,16 +79,16 @@ h1 {
 }
 
 /* ========================
-   TABLE HEADER
+   FORM HEADER (RENOMMÉ)
 ======================== */
-.npc-header {
+.npc-form-header {
     display: grid;
     grid-template-columns: 
-        140px   /* Type */
-        180px   /* Supérieur */
-        180px   /* Archétype */
-        80px    /* Nombre */
-        40px;   /* Delete */
+        140px
+        180px
+        180px
+        80px
+        40px;
 
     gap: 10px;
     margin-bottom: 8px;
@@ -127,7 +127,6 @@ h1 {
     border-radius: 4px;
     color: #fff;
     font-size: 0.9rem;
-    transition: border 0.2s;
 }
 
 .npc-row select:focus,
@@ -143,14 +142,7 @@ h1 {
     background: transparent;
     border: none;
     color: #ff6b6b;
-    font-size: 16px;
     cursor: pointer;
-    padding: 4px;
-    text-align: center;
-}
-
-.delete:hover {
-    color: #ff3b3b;
 }
 
 /* ========================
@@ -172,33 +164,22 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background 0.2s, transform 0.1s;
 }
 
-button:hover {
-    background: #555;
-}
-
-button:active {
-    transform: scale(0.97);
-}
-
-/* CTA spécifiques */
 #add-line {
     background: #7FFFD4;
     color: black;
-}
-
-#add-line:hover {
-    background: #66e0c2;
 }
 
 #generate {
     background: #DC143C;
 }
 
-#generate:hover {
-    background: #b01030;
+/* ========================
+   NPC OUTPUT (ISOLATION)
+======================== */
+.npc-output {
+    margin-top: 20px;
 }
 
 /* ========================
@@ -208,7 +189,6 @@ button:active {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 16px;
-    margin-top: 20px;
 }
 
 /* ========================
@@ -219,49 +199,39 @@ button:active {
     border-radius: 8px;
     padding: 16px;
     border: 1px solid #444;
+
     display: flex;
     flex-direction: column;
     gap: 12px;
-    overflow-wrap: break-word;
-    word-break: break-word;
+
+    min-width: 0;
 }
 
 /* ========================
-   LEVEL 1
+   CARD HEADER (DIFFÉRENT)
 ======================== */
-.npc-header {
+.npc-card-header {
+    display: grid;
+    gap: 4px;
+
     border-bottom: 1px solid #555;
     padding-bottom: 8px;
-    min-width: 0; /* CRITIQUE */
-
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4px;
 }
 
 .npc-type {
-    font-weight: bold;
-    text-transform: uppercase;
     font-size: 0.8rem;
+    text-transform: uppercase;
     opacity: 0.8;
 }
 
 .npc-main {
     font-size: 1.1rem;
     font-weight: bold;
-    line-height: 1.2;
 }
 
 .npc-sub {
     font-size: 0.9rem;
     opacity: 0.7;
-}
-
-.npc-type,
-.npc-main,
-.npc-sub {
-    white-space: normal;
-    overflow-wrap: break-word;
 }
 
 /* ========================
@@ -279,7 +249,6 @@ button:active {
     opacity: 0.6;
 }
 
-/* Stats */
 .npc-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -291,13 +260,6 @@ button:active {
     padding: 6px;
     border-radius: 4px;
     text-align: center;
-    font-size: 0.8rem;
-}
-
-/* Lists */
-.npc-list {
-    font-size: 0.85rem;
-    line-height: 1.4;
 }
 
 /* ========================
@@ -316,11 +278,10 @@ button:active {
 .error {
     color: #ff6b6b;
     margin-top: 10px;
-    font-size: 0.9rem;
 }
 
 /* ========================
-   RESPONSIVE TABLETTE
+   RESPONSIVE
 ======================== */
 @media (max-width: 768px) {
 
@@ -338,42 +299,16 @@ button:active {
         padding: 20px 10px;
     }
 
-    .content {
-        max-width: 100%;
-    }
-
-    /* On masque le header */
-    .npc-header {
+    /* On masque UNIQUEMENT le header du formulaire */
+    .npc-form-header {
         display: none;
     }
 
-    /* Chaque ligne devient une carte */
     .npc-row {
         grid-template-columns: 1fr;
         background: #2a2a2a;
         padding: 12px;
         border-radius: 6px;
-    }
-
-    .npc-row select,
-    .npc-row input {
-        width: 100%;
-    }
-
-    .npc-card {
-        padding: 12px;
-    }
-
-    .npc-main {
-        font-size: 1rem;
-    }
-
-    .npc-sub {
-        font-size: 0.8rem;
-    }
-
-    .delete {
-        align-self: flex-end;
     }
 
     .actions {
@@ -385,24 +320,8 @@ button:active {
     }
 }
 
-/* ========================
-   RESPONSIVE MOBILE
-======================== */
-
 @media (max-width: 480px) {
     .npc-results {
         grid-template-columns: 1fr;
-    }
-
-    .npc-card {
-        padding: 10px;
-    }
-
-    .npc-main {
-        font-size: 0.95rem;
-    }
-
-    .npc-type {
-        font-size: 0.7rem;
     }
 }
