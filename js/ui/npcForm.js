@@ -51,9 +51,9 @@ export function validateTotal() {
 
     if (total > 10) {
         errorEl.textContent = "Maximum 10 PNJ autorisés.";
-        return false;
+        return null; // IMPORTANT
     }
 
     errorEl.textContent = "";
-    return true;
+    return total; // IMPORTANT
 }

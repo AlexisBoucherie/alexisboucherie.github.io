@@ -202,6 +202,100 @@ button:active {
 }
 
 /* ========================
+   NPC GRID
+======================== */
+.npc-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* ========================
+   NPC CARD
+======================== */
+.npc-card {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ========================
+   LEVEL 1
+======================== */
+.npc-header {
+    border-bottom: 1px solid #555;
+    padding-bottom: 8px;
+}
+
+.npc-type {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.npc-main {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.npc-sub {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ========================
+   LEVEL 2
+======================== */
+.npc-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.npc-section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/* Stats */
+.npc-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.npc-stat {
+    background: #1e1e1e;
+    padding: 6px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* Lists */
+.npc-list {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* ========================
+   LEVEL 3
+======================== */
+.npc-meta {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    border-top: 1px solid #444;
+    padding-top: 6px;
+}
+
+/* ========================
    ERROR
 ======================== */
 .error {
